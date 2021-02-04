@@ -6,6 +6,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'ajmwagar/vim-deus'
 Plug 'mhinz/vim-startify'
+Plug 'junegunn/goyo.vim'
+Plug 'justinmk/vim-sneak'
+"Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
@@ -24,6 +27,10 @@ colorscheme gruvbox
 " fzf plugin
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
+" vim kexokinase
+"let g:Hexokinase_highlighters = [ 'virtual' ]
+" Sneak
+let g:sneak#label = 1
 
 " Mappings
 let mapleader = " "
@@ -63,11 +70,14 @@ nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gl :GcLog<CR>
 " Searching
 nnoremap <leader>f :Files<CR>
+" Zen mode (Goyo plugin)
+nnoremap <leader>z :Goyo<CR>
 
 " Sets
 filetype plugin indent on	" required
 syntax on
 set timeoutlen=500
+set termguicolors
 set number
 set relativenumber
 set colorcolumn=80
