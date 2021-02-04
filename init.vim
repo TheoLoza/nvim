@@ -58,6 +58,8 @@ nnoremap <C-l> <C-w>l
 " Git
 nnoremap <leader>gc :GBranches<CR>
 nnoremap <leader>gs :G<CR>
+nnoremap <leader>gf :diffget //2<CR>
+nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gl :GcLog<CR>
 " Searching
 nnoremap <leader>f :Files<CR>
