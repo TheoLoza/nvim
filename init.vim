@@ -62,6 +62,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" Terminal
+nnoremap <leader>th :split <bar> :terminal<CR>
+nnoremap <leader>tv :vsplit <bar> :terminal<CR>
+tnoremap <C-Space> <C-\><C-n>
 " Git
 nnoremap <leader>gc :GBranches<CR>
 nnoremap <leader>gs :G<CR>
