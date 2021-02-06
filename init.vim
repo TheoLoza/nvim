@@ -7,15 +7,14 @@ Plug 'morhetz/gruvbox'
 Plug 'ajmwagar/vim-deus'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/goyo.vim'
-Plug 'justinmk/vim-sneak'
 "Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'mbbill/undotree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'stsewd/fzf-checkout.vim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-which-key'
 call plug#end()
@@ -23,14 +22,10 @@ call plug#end()
 " Color scheme
 colorscheme gruvbox
 
-" lets
-" fzf plugin
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
-let $FZF_DEFAULT_OPTS='--reverse'
+" lets and includes
+lua require('telescope').setup({defaults = {file_sorter = require('telescope.sorters').get_fzy_sorter}})
 " vim kexokinase
 "let g:Hexokinase_highlighters = [ 'virtual' ]
-" Sneak
-let g:sneak#label = 1
 
 " Mappings
 let mapleader = " "
@@ -67,13 +62,13 @@ nnoremap <leader>th :split <bar> :terminal<CR>
 nnoremap <leader>tv :vsplit <bar> :terminal<CR>
 tnoremap <C-Space> <C-\><C-n>
 " Git
-nnoremap <leader>gc :GBranches<CR>
 nnoremap <leader>gs :G<CR>
 nnoremap <leader>gf :diffget //2<CR>
 nnoremap <leader>gj :diffget //3<CR>
 nnoremap <leader>gl :GcLog<CR>
-" Searching
-nnoremap <leader>f :Files<CR>
+" Telescope
+nnoremap <leader>pf :lua require('telescope.builtin').find_files()<CR>
+nnoremap <leader>pb :lua require('telescope.builtin').buffers()<CR> 
 " Zen mode (Goyo plugin)
 nnoremap <leader>z :Goyo<CR>
 
