@@ -47,6 +47,8 @@ nnoremap <C-c> <Esc>
 " Buffer switch using TAB
 nnoremap <TAB> :bnext<CR>
 nnoremap <S-TAB> :bprevious<CR>
+" Buffer delete
+nnoremap <leader>bd :bdelete<CR>
 " Autocomplete
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " Selection tabbing
